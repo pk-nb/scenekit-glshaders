@@ -14,6 +14,14 @@
 		512732AB1A1BEBB70070D96E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 512732AA1A1BEBB70070D96E /* Images.xcassets */; };
 		512732AE1A1BEBB70070D96E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 512732AC1A1BEBB70070D96E /* LaunchScreen.xib */; };
 		512732BA1A1BEBB70070D96E /* CustomShadersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512732B91A1BEBB70070D96E /* CustomShadersTests.swift */; };
+		512732C41A1C0D410070D96E /* geometry_ripple.shader in Resources */ = {isa = PBXBuildFile; fileRef = 512732C31A1C0D410070D96E /* geometry_ripple.shader */; };
+		51F484AE1A223BF000B4954F /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F484AD1A223BF000B4954F /* SceneKit.framework */; };
+		51F484B01A223C0100B4954F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F484AF1A223C0100B4954F /* OpenGLES.framework */; };
+		51F484B21A223D9100B4954F /* sm_surf.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484B11A223D9100B4954F /* sm_surf.shader */; };
+		51F484B41A223D9E00B4954F /* toon.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484B31A223D9E00B4954F /* toon.shader */; };
+		51F484F21A22540300B4954F /* sm_light.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484F11A22540300B4954F /* sm_light.shader */; };
+		51F484F41A22541900B4954F /* sm_frag.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484F31A22541900B4954F /* sm_frag.shader */; };
+		51F484F61A22542100B4954F /* sm_geom.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484F51A22542100B4954F /* sm_geom.shader */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,14 @@
 		512732B31A1BEBB70070D96E /* CustomShadersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomShadersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		512732B81A1BEBB70070D96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		512732B91A1BEBB70070D96E /* CustomShadersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShadersTests.swift; sourceTree = "<group>"; };
+		512732C31A1C0D410070D96E /* geometry_ripple.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = geometry_ripple.shader; sourceTree = "<group>"; };
+		51F484AD1A223BF000B4954F /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		51F484AF1A223C0100B4954F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		51F484B11A223D9100B4954F /* sm_surf.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sm_surf.shader; sourceTree = "<group>"; };
+		51F484B31A223D9E00B4954F /* toon.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = toon.shader; sourceTree = "<group>"; };
+		51F484F11A22540300B4954F /* sm_light.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sm_light.shader; sourceTree = "<group>"; };
+		51F484F31A22541900B4954F /* sm_frag.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sm_frag.shader; sourceTree = "<group>"; };
+		51F484F51A22542100B4954F /* sm_geom.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sm_geom.shader; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F484B01A223C0100B4954F /* OpenGLES.framework in Frameworks */,
+				51F484AE1A223BF000B4954F /* SceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +79,8 @@
 		512732931A1BEBB70070D96E = {
 			isa = PBXGroup;
 			children = (
+				51F484AF1A223C0100B4954F /* OpenGLES.framework */,
+				51F484AD1A223BF000B4954F /* SceneKit.framework */,
 				5127329E1A1BEBB70070D96E /* CustomShaders */,
 				512732B61A1BEBB70070D96E /* CustomShadersTests */,
 				5127329D1A1BEBB70070D96E /* Products */,
@@ -80,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				512732A11A1BEBB70070D96E /* AppDelegate.swift */,
-				512732A31A1BEBB70070D96E /* art.scnassets */,
 				512732A51A1BEBB70070D96E /* GameViewController.swift */,
 				512732A71A1BEBB70070D96E /* Main.storyboard */,
-				512732AA1A1BEBB70070D96E /* Images.xcassets */,
 				512732AC1A1BEBB70070D96E /* LaunchScreen.xib */,
+				512732AA1A1BEBB70070D96E /* Images.xcassets */,
+				51F484F71A22555C00B4954F /* Shaders */,
+				512732A31A1BEBB70070D96E /* art.scnassets */,
 				5127329F1A1BEBB70070D96E /* Supporting Files */,
 			);
 			path = CustomShaders;
@@ -113,6 +134,27 @@
 				512732B81A1BEBB70070D96E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		51F484F71A22555C00B4954F /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				51F484F81A22557100B4954F /* WWDC Shaders */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+		51F484F81A22557100B4954F /* WWDC Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				51F484B11A223D9100B4954F /* sm_surf.shader */,
+				51F484F11A22540300B4954F /* sm_light.shader */,
+				51F484F31A22541900B4954F /* sm_frag.shader */,
+				51F484F51A22542100B4954F /* sm_geom.shader */,
+				51F484B31A223D9E00B4954F /* toon.shader */,
+				512732C31A1C0D410070D96E /* geometry_ripple.shader */,
+			);
+			name = "WWDC Shaders";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +237,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F484B21A223D9100B4954F /* sm_surf.shader in Resources */,
 				512732AE1A1BEBB70070D96E /* LaunchScreen.xib in Resources */,
+				512732C41A1C0D410070D96E /* geometry_ripple.shader in Resources */,
+				51F484F21A22540300B4954F /* sm_light.shader in Resources */,
+				51F484F41A22541900B4954F /* sm_frag.shader in Resources */,
 				512732AB1A1BEBB70070D96E /* Images.xcassets in Resources */,
+				51F484F61A22542100B4954F /* sm_geom.shader in Resources */,
 				512732A41A1BEBB70070D96E /* art.scnassets in Resources */,
+				51F484B41A223D9E00B4954F /* toon.shader in Resources */,
 				512732A91A1BEBB70070D96E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +459,7 @@
 				512732BF1A1BEBB70070D96E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		512732C01A1BEBB70070D96E /* Build configuration list for PBXNativeTarget "CustomShadersTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +468,7 @@
 				512732C21A1BEBB70070D96E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
