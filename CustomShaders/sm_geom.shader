@@ -1,4 +1,4 @@
-uniform float geomIntensity = 1.0;
+const float geomIntensity = 1.0;
 
 float freq = 1.8;
 float power = 4.0;
