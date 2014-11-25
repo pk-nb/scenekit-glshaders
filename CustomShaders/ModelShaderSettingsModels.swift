@@ -20,15 +20,22 @@ class ShaderData: NSObject {
   }
 }
 
-//class ModelData: NSObject {
-//  var filename: String
-//  var geometry: SCNGeometry
-//  
-//  init(filename: String) {
-//    self.filename = filename
-//    
-//  }
-//}
+class ModelData: NSObject {
+  var filename: String
+  var node: SCNNode
+  
+  init(filename: String, nodeName: String, nodeSetup: ((SCNNode) -> Void)? ) {
+    self.filename = filename
+    node = SCNScene(named: "art.scnassets/\(filename).dae")?.rootNode.childNodeWithName(nodeName, recursively: true) as SCNNode!
+    nodeSetup?(node)
+  }
+  
+  init(name: String, node: SCNNode, nodeSetup: ((SCNNode) -> Void)?) {
+    self.filename = name
+    self.node = node
+    nodeSetup?(node)
+  }
+}
 
 protocol SettingItem {
   var title: String {get}
@@ -41,13 +48,25 @@ class NoneSettingItem: SettingItem {
   var selected: Bool = true
 }
 
-//class ModelSettingItem: SettingItem {
-//  
-//}
+class ModelSettingItem: SettingItem {
+  var modelData: ModelData
+  var selected: Bool
+  
+  var title: String {
+    get {
+      return modelData.filename
+    }
+  }
+  
+  init(modelData: ModelData, selected: Bool = false) {
+    self.modelData = modelData
+    self.selected = selected
+  }
+}
 
 class ShaderSettingItem: SettingItem {
   var shaderData: ShaderData
-  var selected: Bool = false
+  var selected: Bool
   var title: String {
     get {
       return shaderData.filename
@@ -59,8 +78,9 @@ class ShaderSettingItem: SettingItem {
     }
   }
   
-  init(shaderData: ShaderData) {
+  init(shaderData: ShaderData, selected: Bool = false) {
     self.shaderData = shaderData
+    self.selected = selected
   }
 }
 
@@ -80,7 +100,3 @@ class Settings: NSObject {
     return nil
   }
 }
-
-
-
-

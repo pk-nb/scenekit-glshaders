@@ -8,32 +8,13 @@
 
 import UIKit
 
-protocol GameUpdateDelagate {
-  func updateGame()
-}
-
 class SettingsTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UIBarPositioningDelegate {
   
   var settingData: [SettingItem] = []
-  var gameUpdater: GameUpdateDelagate? = nil
-  
-  func setSettingData(settingData: [SettingItem]) {
-    self.settingData = settingData
-  }
+  var gameUpdater: (() -> ())?
     
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   // MARK: - Table view data source
@@ -65,14 +46,15 @@ class SettingsTableViewController: UITableViewController, UITableViewDataSource,
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     
-    // Set settings to true, then trigger reload to parent (through delegation?)
+    // Set settings to true, then trigger reload to parent
     for i in 0..<settingData.count {
       settingData[i].selected = i == indexPath.row
     }
     
+    // Animate down, updating view after settings popover closes
     self.dismissViewControllerAnimated(true, completion: {
       // Update Game
-      self.gameUpdater?.updateGame()
+      self.gameUpdater?()
       return
     })
   }
@@ -82,8 +64,4 @@ class SettingsTableViewController: UITableViewController, UITableViewDataSource,
   override func prefersStatusBarHidden() -> Bool {
     return true
   }
-  
-  //  func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-  //    return UIBarPosition.TopAttached
-  //  }
 }
