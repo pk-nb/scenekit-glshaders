@@ -48,12 +48,13 @@ class SettingsTableViewController: UITableViewController, UITableViewDataSource,
     
     // Set settings to true, then trigger reload to parent
     for i in 0..<settingData.count {
-      settingData[i].selected = i == indexPath.row
+      settingData[i].selected = (i == indexPath.row)
     }
     
     // Animate down, updating view after settings popover closes
     self.dismissViewControllerAnimated(true, completion: {
       // Update Game
+      
       self.gameUpdater?()
       return
     })

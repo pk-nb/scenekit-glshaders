@@ -149,7 +149,7 @@ class GameViewController: UIViewController {
         currentNode = modelItem.modelData.node
         scnView.scene?.rootNode.addChildNode(currentNode!)
       }
-      else {
+      else if currentNode! != modelItem.modelData.node {
         scnView.scene?.rootNode.replaceChildNode(currentNode!, with: modelItem.modelData.node)
         currentNode = modelItem.modelData.node
       }
