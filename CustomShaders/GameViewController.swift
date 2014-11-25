@@ -13,8 +13,8 @@ import SceneKit
 class GameViewController: UIViewController {
   
   @IBOutlet weak var scnView: SCNView!
-  private var settings: AllSettings = AllSettings()
-  private var currentNode: SCNNode? = nil
+  private var settings: AllSettings = AllSettings() // Modal object that holds settings with models, shaders, etc
+  private var currentNode: SCNNode?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -135,7 +135,11 @@ class GameViewController: UIViewController {
       newShaderModifiers[SCNShaderModifierEntryPointFragment] = settingItem.shaderProgram
     }
     
-    currentNode!.geometry!.shaderModifiers = newShaderModifiers
+    currentNode!.geometry?.shaderModifiers = newShaderModifiers
+    currentNode!.enumerateChildNodesUsingBlock( { (node: SCNNode!, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+      node.geometry?.shaderModifiers = newShaderModifiers
+      return
+    })
   }
   
   
@@ -174,6 +178,8 @@ class GameViewController: UIViewController {
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // For the different settings popovers, set the items for that button 
+    // and callback lambda for update
     switch segue.identifier!  {
     case "modelSettings":
       let settingsTableView = segue.destinationViewController as SettingsTableViewController
@@ -198,7 +204,6 @@ class GameViewController: UIViewController {
     default:
       break
     }
-    
   }
 }
 

@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UIBarPositioningDelegate {
+class SettingsTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
   
   var settingData: [SettingItem] = []
-  var gameUpdater: (() -> ())?
+  var gameUpdater: (() -> ())? // Optional lambda to update, called on row selection
     
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -24,13 +24,13 @@ class ModelData: NSObject {
   var filename: String
   var node: SCNNode
   
-  init(filename: String, nodeName: String, nodeSetup: ((SCNNode) -> Void)? ) {
+  init(filename: String, nodeName: String, nodeSetup: ((SCNNode) -> Void)? = nil) {
     self.filename = filename
     node = SCNScene(named: "art.scnassets/\(filename).dae")?.rootNode.childNodeWithName(nodeName, recursively: true) as SCNNode!
     nodeSetup?(node)
   }
   
-  init(name: String, node: SCNNode, nodeSetup: ((SCNNode) -> Void)?) {
+  init(name: String, node: SCNNode, nodeSetup: ((SCNNode) -> Void)? = nil) {
     self.filename = name
     self.node = node
     nodeSetup?(node)
