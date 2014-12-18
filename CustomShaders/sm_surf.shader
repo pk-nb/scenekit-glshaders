@@ -1,4 +1,4 @@
-float surfIntensity = 1.0;
+const float surfIntensity = 1.0;
 
 float n = 1.0;
 vec3 p = vec3(_surface.diffuseTexcoord, 1.0) * 8.0;

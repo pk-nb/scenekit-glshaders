@@ -26,23 +26,31 @@ class AllSettings: NSObject {
   var geometrySettings = Settings(items: [
     NoneSettingItem(),
     ShaderSettingItem(shaderData: ShaderData(filename: "geometry_ripple")),
-    ShaderSettingItem(shaderData: ShaderData(filename: "sm_geom"))
+    ShaderSettingItem(shaderData: ShaderData(filename: "sm_geom")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "twisted")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "bubble"))
   ])
 
   var surfaceSettings = Settings(items: [
     NoneSettingItem(),
-    ShaderSettingItem(shaderData: ShaderData(filename: "sm_surf"))
+    ShaderSettingItem(shaderData: ShaderData(filename: "sm_surf")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "nb_surf"))
   ])
 
   var lightingSettings = Settings(items: [
     NoneSettingItem(),
-    ShaderSettingItem(shaderData: ShaderData(filename: "toon")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "fixed_toon")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "light_source_toon")),
     ShaderSettingItem(shaderData: ShaderData(filename: "sm_light"))
   ])
   
   var fragmentSettings = Settings(items: [
     NoneSettingItem(),
-    ShaderSettingItem(shaderData: ShaderData(filename: "sm_frag"))
+    ShaderSettingItem(shaderData: ShaderData(filename: "sm_frag")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "mask")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "red_dot_product")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "alpha_dot_product")),
+    ShaderSettingItem(shaderData: ShaderData(filename: "outline"))
   ])
   
   // MARK: - Class methods to build sample nodes

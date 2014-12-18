@@ -18,13 +18,22 @@
 		51F484AE1A223BF000B4954F /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F484AD1A223BF000B4954F /* SceneKit.framework */; };
 		51F484B01A223C0100B4954F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F484AF1A223C0100B4954F /* OpenGLES.framework */; };
 		51F484B21A223D9100B4954F /* sm_surf.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484B11A223D9100B4954F /* sm_surf.shader */; };
-		51F484B41A223D9E00B4954F /* toon.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484B31A223D9E00B4954F /* toon.shader */; };
+		51F484B41A223D9E00B4954F /* fixed_toon.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484B31A223D9E00B4954F /* fixed_toon.shader */; };
 		51F484F21A22540300B4954F /* sm_light.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484F11A22540300B4954F /* sm_light.shader */; };
 		51F484F41A22541900B4954F /* sm_frag.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484F31A22541900B4954F /* sm_frag.shader */; };
 		51F484F61A22542100B4954F /* sm_geom.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F484F51A22542100B4954F /* sm_geom.shader */; };
 		51F484FA1A22775400B4954F /* ModelShaderSettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F484F91A22775400B4954F /* ModelShaderSettingsModels.swift */; };
 		51F484FD1A23CC8B00B4954F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F484FC1A23CC8B00B4954F /* SettingsTableViewController.swift */; };
 		51F484FF1A23D3B000B4954F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F484FE1A23D3B000B4954F /* Settings.swift */; };
+		51F485071A2779E700B4954F /* red_dot_product.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F485061A2779E700B4954F /* red_dot_product.shader */; };
+		51F485091A2780E300B4954F /* twisted.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F485081A2780E300B4954F /* twisted.shader */; };
+		51F4850C1A27942400B4954F /* mask.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F4850B1A27942400B4954F /* mask.shader */; };
+		51F4850E1A27954D00B4954F /* outline.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F4850D1A27954D00B4954F /* outline.shader */; };
+		51F485101A279C9C00B4954F /* light_source_toon.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F4850F1A279C9C00B4954F /* light_source_toon.shader */; };
+		51F485121A27DEB300B4954F /* bubble.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F485111A27DEB300B4954F /* bubble.shader */; };
+		51F485141A27E3F400B4954F /* alpha_dot_product.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F485131A27E3F400B4954F /* alpha_dot_product.shader */; };
+		51F485161A27E5EC00B4954F /* nb_surf.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F485151A27E5EC00B4954F /* nb_surf.shader */; };
+		51F485181A27EB7600B4954F /* nb_frag.shader in Resources */ = {isa = PBXBuildFile; fileRef = 51F485171A27EB7600B4954F /* nb_frag.shader */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +62,22 @@
 		51F484AD1A223BF000B4954F /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		51F484AF1A223C0100B4954F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		51F484B11A223D9100B4954F /* sm_surf.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sm_surf.shader; sourceTree = "<group>"; };
-		51F484B31A223D9E00B4954F /* toon.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = toon.shader; sourceTree = "<group>"; };
+		51F484B31A223D9E00B4954F /* fixed_toon.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fixed_toon.shader; sourceTree = "<group>"; };
 		51F484F11A22540300B4954F /* sm_light.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sm_light.shader; sourceTree = "<group>"; };
 		51F484F31A22541900B4954F /* sm_frag.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sm_frag.shader; sourceTree = "<group>"; };
 		51F484F51A22542100B4954F /* sm_geom.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sm_geom.shader; sourceTree = "<group>"; };
 		51F484F91A22775400B4954F /* ModelShaderSettingsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelShaderSettingsModels.swift; sourceTree = "<group>"; };
 		51F484FC1A23CC8B00B4954F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		51F484FE1A23D3B000B4954F /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		51F485061A2779E700B4954F /* red_dot_product.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = red_dot_product.shader; sourceTree = "<group>"; };
+		51F485081A2780E300B4954F /* twisted.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = twisted.shader; sourceTree = "<group>"; };
+		51F4850B1A27942400B4954F /* mask.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mask.shader; sourceTree = "<group>"; };
+		51F4850D1A27954D00B4954F /* outline.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = outline.shader; sourceTree = "<group>"; };
+		51F4850F1A279C9C00B4954F /* light_source_toon.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = light_source_toon.shader; sourceTree = "<group>"; };
+		51F485111A27DEB300B4954F /* bubble.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bubble.shader; sourceTree = "<group>"; };
+		51F485131A27E3F400B4954F /* alpha_dot_product.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alpha_dot_product.shader; sourceTree = "<group>"; };
+		51F485151A27E5EC00B4954F /* nb_surf.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nb_surf.shader; sourceTree = "<group>"; };
+		51F485171A27EB7600B4954F /* nb_frag.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nb_frag.shader; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +164,7 @@
 		51F484F71A22555C00B4954F /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				51F4850A1A27938C00B4954F /* Nathanael */,
 				51F484F81A22557100B4954F /* WWDC Shaders */,
 			);
 			name = Shaders;
@@ -154,12 +173,12 @@
 		51F484F81A22557100B4954F /* WWDC Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				51F484B31A223D9E00B4954F /* fixed_toon.shader */,
+				512732C31A1C0D410070D96E /* geometry_ripple.shader */,
+				51F484F51A22542100B4954F /* sm_geom.shader */,
 				51F484B11A223D9100B4954F /* sm_surf.shader */,
 				51F484F11A22540300B4954F /* sm_light.shader */,
 				51F484F31A22541900B4954F /* sm_frag.shader */,
-				51F484F51A22542100B4954F /* sm_geom.shader */,
-				51F484B31A223D9E00B4954F /* toon.shader */,
-				512732C31A1C0D410070D96E /* geometry_ripple.shader */,
 			);
 			name = "WWDC Shaders";
 			sourceTree = "<group>";
@@ -172,6 +191,22 @@
 				51F484F71A22555C00B4954F /* Shaders */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		51F4850A1A27938C00B4954F /* Nathanael */ = {
+			isa = PBXGroup;
+			children = (
+				51F485131A27E3F400B4954F /* alpha_dot_product.shader */,
+				51F485111A27DEB300B4954F /* bubble.shader */,
+				51F4850F1A279C9C00B4954F /* light_source_toon.shader */,
+				51F4850D1A27954D00B4954F /* outline.shader */,
+				51F4850B1A27942400B4954F /* mask.shader */,
+				51F485151A27E5EC00B4954F /* nb_surf.shader */,
+				51F485171A27EB7600B4954F /* nb_frag.shader */,
+				51F485061A2779E700B4954F /* red_dot_product.shader */,
+				51F485081A2780E300B4954F /* twisted.shader */,
+			);
+			name = Nathanael;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,15 +289,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F485101A279C9C00B4954F /* light_source_toon.shader in Resources */,
 				51F484B21A223D9100B4954F /* sm_surf.shader in Resources */,
 				512732AE1A1BEBB70070D96E /* LaunchScreen.xib in Resources */,
 				512732C41A1C0D410070D96E /* geometry_ripple.shader in Resources */,
+				51F485071A2779E700B4954F /* red_dot_product.shader in Resources */,
+				51F4850C1A27942400B4954F /* mask.shader in Resources */,
+				51F4850E1A27954D00B4954F /* outline.shader in Resources */,
 				51F484F21A22540300B4954F /* sm_light.shader in Resources */,
 				51F484F41A22541900B4954F /* sm_frag.shader in Resources */,
 				512732AB1A1BEBB70070D96E /* Images.xcassets in Resources */,
+				51F485091A2780E300B4954F /* twisted.shader in Resources */,
 				51F484F61A22542100B4954F /* sm_geom.shader in Resources */,
 				512732A41A1BEBB70070D96E /* art.scnassets in Resources */,
-				51F484B41A223D9E00B4954F /* toon.shader in Resources */,
+				51F484B41A223D9E00B4954F /* fixed_toon.shader in Resources */,
+				51F485181A27EB7600B4954F /* nb_frag.shader in Resources */,
+				51F485121A27DEB300B4954F /* bubble.shader in Resources */,
+				51F485141A27E3F400B4954F /* alpha_dot_product.shader in Resources */,
+				51F485161A27E5EC00B4954F /* nb_surf.shader in Resources */,
 				512732A91A1BEBB70070D96E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

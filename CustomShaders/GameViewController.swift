@@ -134,7 +134,7 @@ class GameViewController: UIViewController {
     if let settingItem = settings.fragmentSettings.selected() as? ShaderSettingItem {
       newShaderModifiers[SCNShaderModifierEntryPointFragment] = settingItem.shaderProgram
     }
-    
+
     currentNode!.geometry?.shaderModifiers = newShaderModifiers
     currentNode!.enumerateChildNodesUsingBlock( { (node: SCNNode!, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
       node.geometry?.shaderModifiers = newShaderModifiers
