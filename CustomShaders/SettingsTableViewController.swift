@@ -28,7 +28,7 @@ class SettingsTableViewController: UITableViewController, UITableViewDataSource,
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ShaderSettingCell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ShaderSettingCell", forIndexPath: indexPath) as! UITableViewCell
     
     cell.textLabel!.text = settingData[indexPath.row].title
     if settingData[indexPath.row].selected {

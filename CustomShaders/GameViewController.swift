@@ -47,7 +47,7 @@ class GameViewController: UIViewController {
     if let existingGestureRecognizers = scnView.gestureRecognizers {
       gestureRecognizers.addObjectsFromArray(existingGestureRecognizers)
     }
-    scnView.gestureRecognizers = gestureRecognizers
+    scnView.gestureRecognizers = gestureRecognizers as [AnyObject]
     
     // Keep Shaders animating
     scnView.playing = true
@@ -182,23 +182,23 @@ class GameViewController: UIViewController {
     // and callback lambda for update
     switch segue.identifier!  {
     case "modelSettings":
-      let settingsTableView = segue.destinationViewController as SettingsTableViewController
+      let settingsTableView = segue.destinationViewController as! SettingsTableViewController
       settingsTableView.settingData = settings.modelSettings.items
       settingsTableView.gameUpdater = updateModel
     case "geometrySettings":
-      let settingsTableView = segue.destinationViewController as SettingsTableViewController
+      let settingsTableView = segue.destinationViewController as! SettingsTableViewController
       settingsTableView.settingData = settings.geometrySettings.items
       settingsTableView.gameUpdater = updateShaders
     case "surfaceSettings":
-      let settingsTableView = segue.destinationViewController as SettingsTableViewController
+      let settingsTableView = segue.destinationViewController as! SettingsTableViewController
       settingsTableView.settingData = settings.surfaceSettings.items
       settingsTableView.gameUpdater = updateShaders
     case "lightSettings":
-      let settingsTableView = segue.destinationViewController as SettingsTableViewController
+      let settingsTableView = segue.destinationViewController as! SettingsTableViewController
       settingsTableView.settingData = settings.lightingSettings.items
       settingsTableView.gameUpdater = updateShaders
     case "fragmentSettings":
-      let settingsTableView = segue.destinationViewController as SettingsTableViewController
+      let settingsTableView = segue.destinationViewController as! SettingsTableViewController
       settingsTableView.settingData = settings.fragmentSettings.items
       settingsTableView.gameUpdater = updateShaders
     default:
