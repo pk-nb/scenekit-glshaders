@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsTableViewController: UITableViewController {
   
   var settingData: [SettingItem] = []
   var gameUpdater: (() -> ())? // Optional lambda to update, called on row selection
@@ -28,7 +28,7 @@ class SettingsTableViewController: UITableViewController, UITableViewDataSource,
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ShaderSettingCell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ShaderSettingCell", forIndexPath: indexPath)
     
     cell.textLabel!.text = settingData[indexPath.row].title
     if settingData[indexPath.row].selected {

@@ -42,12 +42,12 @@ class GameViewController: UIViewController {
     
     // add a tap gesture recognizer
     let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-    let gestureRecognizers = NSMutableArray()
+    let gestureRecognizers : NSMutableArray = NSMutableArray()
     gestureRecognizers.addObject(tapGesture)
     if let existingGestureRecognizers = scnView.gestureRecognizers {
       gestureRecognizers.addObjectsFromArray(existingGestureRecognizers)
     }
-    scnView.gestureRecognizers = gestureRecognizers as [AnyObject]
+    scnView.gestureRecognizers = (gestureRecognizers.copy() as! [UIGestureRecognizer])
     
     // Keep Shaders animating
     scnView.playing = true
@@ -83,35 +83,35 @@ class GameViewController: UIViewController {
   func handleTap(gestureRecognize: UIGestureRecognizer) {
     // check what nodes are tapped
     let p = gestureRecognize.locationInView(scnView)
-    if let hitResults = scnView.hitTest(p, options: nil) {
-      // check that we clicked on at least one object
-      if hitResults.count > 0 {
+    let hitResults = scnView.hitTest(p, options: nil)
+    // check that we clicked on at least one object
+    if hitResults.count > 0 {
         // retrieved the first clicked object
         let result: AnyObject! = hitResults[0]
-        
+
         // get its material
         let material = result.node!.geometry!.firstMaterial!
-        
+
         // highlight it
         SCNTransaction.begin()
         SCNTransaction.setAnimationDuration(0.5)
-        
+
         // on completion - unhighlight
         SCNTransaction.setCompletionBlock {
-          SCNTransaction.begin()
-          SCNTransaction.setAnimationDuration(0.5)
-          
-          material.emission.contents = UIColor.blackColor()
-          
-          SCNTransaction.commit()
+            SCNTransaction.begin()
+            SCNTransaction.setAnimationDuration(0.5)
+
+            material.emission.contents = UIColor.blackColor()
+
+            SCNTransaction.commit()
         }
-        
+
         material.emission.contents = UIColor.redColor()
-        
+
         SCNTransaction.commit()
-      }
     }
-  }
+    
+    }
   
   
   // MARK: - Updating Lambdas
@@ -169,11 +169,11 @@ class GameViewController: UIViewController {
     return true
   }
   
-  override func supportedInterfaceOrientations() -> Int {
+  override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
     if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-      return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+      return UIInterfaceOrientationMask.AllButUpsideDown
     } else {
-      return Int(UIInterfaceOrientationMask.All.rawValue)
+      return UIInterfaceOrientationMask.All
     }
   }
   

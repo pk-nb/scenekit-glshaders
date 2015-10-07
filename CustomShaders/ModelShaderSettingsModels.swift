@@ -16,7 +16,7 @@ class ShaderData: NSObject {
   init(filename: String) {
     self.filename = filename
     let path = NSBundle.mainBundle().pathForResource(self.filename, ofType: "shader")
-    shaderProgram = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
+    shaderProgram = try! String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
   }
 }
 
